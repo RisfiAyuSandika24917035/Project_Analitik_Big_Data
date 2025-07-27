@@ -29,12 +29,12 @@ st.bar_chart(lama_mean)
 
 # Korelasi visual: Jalur Index vs IPK
 st.subheader("Korelasi Jalur Masuk terhadap IPK")
-sns.regplot(x="jalur_index", y="IPK", data=df)
+sns.regplot(x="JALUR MASUK", y="IPK", data=df)
 st.pyplot(plt.gcf())
 plt.clf()
 
 # Korelasi visual: Jalur Index vs Lama Studi
 st.subheader("Korelasi Jalur Masuk terhadap Lama Studi")
-sns.regplot(x="jalur_index", y="LAMA STUDI", data=df)
+sns.regplot(x="JALUR MASUK", y="LAMA STUDI", data=df)
 st.pyplot(plt.gcf())
 plt.clf()
