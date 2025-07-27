@@ -27,6 +27,11 @@ st.subheader("Rata-rata Lama Studi per Jalur Masuk")
 lama_mean = df.groupby("JALUR MASUK")["LAMA STUDI"].mean().sort_values()
 st.bar_chart(lama_mean)
 
+# Ubah String jadi numerik
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+df["jalur_index"] = le.fit_transform(df["JALUR MASUK"])
+
 # Korelasi visual: Jalur Index vs IPK
 st.subheader("Korelasi Jalur Masuk terhadap IPK")
 sns.regplot(x="JALUR MASUK", y="IPK", data=df)
