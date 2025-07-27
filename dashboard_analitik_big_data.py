@@ -11,6 +11,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.preprocessing import LabelEncoder
 
 # Data
 df = pd.read_csv("data_mahasiswa_final_bgt.csv")
@@ -28,18 +29,18 @@ lama_mean = df.groupby("JALUR MASUK")["LAMA STUDI"].mean().sort_values()
 st.bar_chart(lama_mean)
 
 # Ubah String jadi numerik
-from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
 df["jalur_index"] = le.fit_transform(df["JALUR MASUK"])
 
 # Korelasi visual: Jalur Index vs IPK
 st.subheader("Korelasi Jalur Masuk terhadap IPK")
-sns.regplot(x="JALUR MASUK", y="IPK", data=df)
+sns.regplot(x="jalur_index", y="IPK", data=df)
 st.pyplot(plt.gcf())
 plt.clf()
 
 # Korelasi visual: Jalur Index vs Lama Studi
 st.subheader("Korelasi Jalur Masuk terhadap Lama Studi")
-sns.regplot(x="JALUR MASUK", y="LAMA STUDI", data=df)
+sns.regplot(x="jalur_index", y="LAMA STUDI", data=df)
 st.pyplot(plt.gcf())
 plt.clf()
+
