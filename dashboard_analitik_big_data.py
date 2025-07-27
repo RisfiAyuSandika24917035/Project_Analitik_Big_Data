@@ -28,7 +28,7 @@ st.subheader("Rata-rata Lama Studi per Jalur Masuk")
 lama_mean = df.groupby("JALUR MASUK")["LAMA STUDI"].mean().sort_values()
 st.bar_chart(lama_mean)
 
-# Mapping yang sesuai urutan dari PySpark StringIndexer (misalnya)
+# Mapping yang sesuai urutan dari PySpark StringIndexer
 label_mapping = {
     "SNMPTN": 0.0,
     "SBMPTN": 1.0,
@@ -39,13 +39,13 @@ df["jalur_index"] = df["JALUR MASUK"].map(label_mapping)
 
 # Korelasi visual: Jalur Index vs IPK
 st.subheader("Korelasi Jalur Masuk terhadap IPK")
-sns.regplot(x="jalur_index", y="IPK", data=df)
+sns.regplot(x="Jalur Masuk", y="IPK", data=df)
 st.pyplot(plt.gcf())
 plt.clf()
 
 # Korelasi visual: Jalur Index vs Lama Studi
 st.subheader("Korelasi Jalur Masuk terhadap Lama Studi")
-sns.regplot(x="jalur_index", y="LAMA STUDI", data=df)
+sns.regplot(x="Jalur Masuk", y="LAMA STUDI", data=df)
 st.pyplot(plt.gcf())
 plt.clf()
 
