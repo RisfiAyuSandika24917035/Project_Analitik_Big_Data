@@ -15,7 +15,7 @@ import seaborn as sns
 # Load data hasil simulasi atau analisis
 df = pd.read_csv("data_mahasiswa_final_bgt.csv")
 
-st.title("Dashboard Analisis Jalur Masuk terhadap IPK dan Lama Studi Mahasiswa")
+st.title("Dashboard Analisis Jalur Masuk terhadap IPK dan Lama Studi Mahasiswa UIN SUSKA Program Studi Teknik Informatika")
 
 # Ringkasan data
 st.subheader("Ringkasan Data")
