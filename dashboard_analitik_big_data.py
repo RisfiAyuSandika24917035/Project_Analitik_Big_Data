@@ -12,14 +12,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load data hasil simulasi atau analisis
+# Data
 df = pd.read_csv("data_mahasiswa_final_bgt.csv")
 
 st.title("Dashboard Analisis Jalur Masuk terhadap IPK dan Lama Studi Mahasiswa UIN SUSKA Program Studi Teknik Informatika")
-
-# Ringkasan data
-st.subheader("Ringkasan Data")
-st.dataframe(df.describe())
 
 # Rata-rata IPK per jalur masuk
 st.subheader("Rata-rata IPK per Jalur Masuk")
